@@ -1,0 +1,39 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Metadata:
+    Generator: "former2"
+Description: ""
+Resources:
+    EC2Instance:
+        Type: "AWS::EC2::Instance"
+        Properties:
+            ImageId: "ami-0453898e98046c639"
+            InstanceType: "t2.micro"
+            KeyName: "EC2 Tutorial"
+            AvailabilityZone: !Sub "${AWS::Region}d"
+            Tenancy: "default"
+            SubnetId: "subnet-0d8164236d978a1e5"
+            EbsOptimized: false
+            SecurityGroupIds: 
+              - "sg-0588aaba70932e8b6"
+            SourceDestCheck: true
+            BlockDeviceMappings: 
+              - 
+                DeviceName: "/dev/xvda"
+                Ebs: 
+                    Encrypted: false
+                    VolumeSize: 8
+                    SnapshotId: "snap-05e7955c47c599709"
+                    VolumeType: "gp2"
+                    DeleteOnTermination: true
+            UserData: "IyEvYmluL2Jhc2gKIyBVc2UgdGhpcyBmb3IgeW91ciB1c2VyIGRhdGEgKHNjcmlwdCBmcm9tIHRvcCB0byBib3R0b20pCiMgaW5zdGFsbCBodHRwZCAoTGludXggMiB2ZXJzaW9uKQp5dW0gdXBkYXRlIC15Cnl1bSBpbnN0YWxsIC15IGh0dHBkCnN5c3RlbWN0bCBzdGFydCBodHRwZApzeXN0ZW1jdGwgZW5hYmxlIGh0dHBkCmVjaG8gIjxoMT5IZWxsbyBXb3JsZCBmcm9tICQoaG9zdG5hbWUgLWYpPC9oMT4iID4gL3Zhci93d3cvaHRtbC9pbmRleC5odG1s"
+            Tags: 
+              - 
+                Key: "Description"
+                Value: "This is a test instance."
+              - 
+                Key: "Name"
+                Value: "Test-Instance"
+            HibernationOptions: 
+                Configured: false
+            EnclaveOptions: 
+                Enabled: false
