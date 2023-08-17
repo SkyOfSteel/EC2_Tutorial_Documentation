@@ -35,6 +35,16 @@ My AWS Configure default region is different from the region where the instance 
 ```
 aws --region us-east-1 ec2 describe-instances
 ```
+
+To create a specific RSA key pair in .PEM format:
+
+```
+aws ec2 create-key-pair --key-name "EC2 Tutorial" --key-type RSA --key-format pem
+```
+
+PEM - SSH for Windows 10, Mac and Linux.
+
+PPK - PuTTY for Windows 7 and earlier.
     
 </details>
 
