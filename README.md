@@ -1,19 +1,19 @@
-# EC2_Tutorial_Documentation
+# EC2 Tutorial Documentation
 *Documentation of the process of running an EC2 instance in AWS CLI and CloudFormation.*
 
 ## Former2 Diagram
-<details>
-![alt text](https://github.com/SkyOfSteel/EC2_Tutorial_Documentation/blob/main/EC2%20Tutorial%20Instance.png?raw=true)
+    <details>
+![Alt text](/SkyOfSteel/EC2_Tutorial_Documentation/blob/main/EC2%20Tutorial%20Instance.png?raw=true "Former2 Diagram")
 
 The code to add an image link from the repo is:
 
 ```
-![alt text](https://github.com/SkyOfSteel/EC2_Tutorial_Documentation/blob/main/EC2%20Tutorial%20Instance.png?raw=true)
+![Alt text](/SkyOfSteel/EC2_Tutorial_Documentation/blob/main/EC2%20Tutorial%20Instance.png?raw=true "Former2 Diagram")
 ```
-</details>
+    </details>
 
 ## AWS CLI Command
-<details>
+    <details>
 ```
 aws ec2 run-instances --image-id ami-0453898e98046c639 --count 1 --instance-type t2.micro --key-name "EC2 Tutorial" --security-group-ids sg-0588aaba70932e8b6 --subnet-id subnet-0d8164236d978a1e5
 
@@ -27,11 +27,12 @@ Where **--image-id** is the standard ID for Amazon's own Amazon Linux 2 AMI.
 ```
 aws --region us-east-1 ec2 describe-instances
 ```
-</details>
+
+    </details>
 
 ## CloudFormation Template
 *The file is available in the repository.*
-<details>
+    <details>
 ```
 AWSTemplateFormatVersion: "2010-09-09"
 Metadata:
@@ -73,4 +74,4 @@ Resources:
             EnclaveOptions: 
                 Enabled: false
 ```
-</details>
+    </details>
