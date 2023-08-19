@@ -22,13 +22,17 @@ Shorter alternative if the image is in the main branch of the same repository:
 <details>
 
 ```    
-aws ec2 run-instances --image-id ami-0453898e98046c639 --count 1 --instance-type t2.micro --key-name "EC2 Tutorial" --security-group-ids sg-0588aaba70932e8b6 --subnet-id subnet-0d8164236d978a1e5
+aws --region us-east-1 ec2 run-instances --image-id ami-0453898e98046c639 --count 1 --instance-type t2.micro --key-name "EC2 Tutorial" --security-group-ids sg-0588aaba70932e8b6 --subnet-id subnet-0d8164236d978a1e5
 ```
 ```
-aws ec2 create-tags --resources i-06eab29402aaf2854 --tags Key=Name,Value=Test-Instance,Key=Description,Value="This is a test instance."
+aws --region us-east-1 ec2 create-tags --resources i-06eab29402aaf2854 --tags Key=Name,Value=Test-Instance,Key=Description,Value="This is a test instance."
 ```
 
 Where **--image-id** is the standard ID for Amazon's own Amazon Linux 2 AMI.
+
+**--security-group-ids** and **--subnet-id** are optional; default values will be substituted if empty.
+
+The image ID *ami-0453898e98046c639* (Amazon Linux 2 AMI) does not exist in my account's default region (ca-central-1), so an additional parameter **--region us-east-1** is required. Otherwise, the console returns an error: "An error occurred (InvalidAMIID.NotFound) when calling the RunInstances operation: The image id '[ami-0453898e98046c639]' does not exist".
 
 My AWS Configure default region is different from the region where the instance was created, so an additional command is required to list it in the console.
 
